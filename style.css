@@ -17,18 +17,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/*
- * [Modified] Modern CSS Reset
- * @link https://github.com/hankchizljaw/modern-css-reset
-*/
-/* Box sizing rules */
+/* CSS Resets */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -40,39 +35,10 @@ p {
   margin: 0;
 }
 
-html {
-}
-
-/* Set core body defaults */
 body {
   min-height: 100vh;
   font-size: 100%;
   line-height: 1.5;
-  text-rendering: optimizeSpeed;
-}
-
-/* Make images easier to work with */
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }
 
 /* Personal Styling */
@@ -203,7 +169,6 @@ nav li {
 }
 
 nav li:nth-child(n + 5) {
-  /* display:inline-flex; */
   position: absolute;
   top: calc(100vh - 40px);
 }
@@ -224,4 +189,14 @@ nav a {
   min-height: 40px;
   min-width: 40px;
   width: 100%;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  nav {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  nav li:nth-child(n + 5) {
+    position: unset;
+  }
 }
