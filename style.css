@@ -8,7 +8,7 @@
   --color-text: #14483c;
   --color-anchor: #30482D;
   --font-family: "Maven Pro", "Roboto", sans-serif;
-  --border-radius: 10px;
+  --border-radius: 15px;
 }
 
 html {
@@ -17,7 +17,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* CSS Resets */
+/*
+ * [Modified] Modern CSS Reset
+ * https://github.com/hankchizljaw/modern-css-reset
+*/
+
+/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -39,6 +44,7 @@ body {
   min-height: 100vh;
   font-size: 100%;
   line-height: 1.5;
+  /* hyphens: auto; */
 }
 
 /* Personal Styling */
@@ -92,7 +98,7 @@ a.skip-link {
 }
 a.skip-link:focus {
   top: 0;
-  height: 75px;
+  height: 100px;
 }
 
 header>div.container {
@@ -103,28 +109,32 @@ header>div.container {
 }
 
 h1 {
-  margin: 5rem 0;
+  margin: 7.5rem 0 5rem;
   padding: 2rem 5vw;
   background-color: var(--color-primary);
-  border: 5px solid var(--color-secondary);
-  border-left: none;
-  border-right: none;
+  border-bottom: 10px solid var(--color-secondary);
   border-radius: var(--border-radius);
+  box-shadow: 0px 10px 5px #666;
+  transition: border-bottom 0.125s, box-shadow 0.5s, position 0.5s;
 }
-h1::before {
-  z-index: -1;
-  content: "";
-  /* Relative to root */
-  position: absolute;
-  left: 0%;
-  width: 100%;
-  height: 2rem;
-  background-color: var(--color-secondary);
+h1:active {
+  border-bottom: 1px solid var(--color-secondary);
+  box-shadow: 0px 2px 5px #666;
 }
 
 h2 {
+  color: var(--color-primary);
+  position: relative;
   text-align: center;
   margin: 1rem auto;
+  text-shadow: 0px 3px 2px #888888;
+  top: 0;
+  transition: top 0.5s, text-shadow 0.5s;
+}
+h2:hover {
+  position: relative;
+  top: -3px;
+  text-shadow: 0px 6px 2px #777777;;
 }
 
 header h2, header p {
@@ -155,11 +165,12 @@ header a.link-github:hover {
 
 nav {
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100%;
 }
 
-nav>ul {
+nav>ul, #about>section:nth-child(2)>ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -169,11 +180,14 @@ nav>ul {
 
 nav li {
   width: 100%;
-  background-color: rgba(255, 217, 0, 0.8);
+  background-color: #ffd900cc;
+  border: 3px solid rgb(100, 100, 100);
+  border-radius: 5px;
 }
 
 nav li:nth-child(n + 5) {
   position: absolute;
+  /* Bottom navbar */
   top: calc(100vh - 40px);
 }
 nav li:nth-child(6) {
@@ -187,14 +201,106 @@ nav li:nth-child(5) {
 }
 
 nav a {
+  /* Allow sizing of anchor */
   display: inline-block;
   align-content: center;
   text-align: center;
   min-height: 40px;
   min-width: 40px;
   width: 100%;
+  border-radius: 5px;
   text-decoration: none;
 }
+
+section {
+  margin: 1vw 5vw;
+  padding: 5vw;
+  background-color: #3D3D3D;
+  border-radius: var(--border-radius);
+  border: 2px solid #646464;
+  color: #30cfa9;
+}
+
+section p {
+  padding: 1rem 0;
+}
+
+section a {
+  color: #a7a9f5;
+}
+
+blockquote {
+  border: 2px solid #30cfa9;
+  border-left: none;
+  border-right: none;
+  padding: 1rem 1vw;
+}
+
+section h3 {
+  background: linear-gradient(to right, #df60ff 0%, #ff7866 25%);
+  color: transparent;
+  -webkit-background-clip: text;
+	background-clip: text;
+}
+
+#about>section:nth-child(2)>ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #202020;
+  border-radius: 10px;
+}
+
+#about>section:nth-child(2)>ul>li {
+  padding: 1rem 1vw;
+}
+
+footer#files div.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+footer#files div.container>h3 {
+  align-content: center;
+  position: relative;
+  grid-column: span 2;
+  padding: 1rem;
+}
+footer#files div.container>h3::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 0.5rem;
+  background-color: #ffd900cc;
+}
+footer#files div.container>*:not(h3) {
+  position: relative;
+  background-color: #e8e8e8;
+  margin: 1rem 1vw;
+  padding: 2rem 5vw;
+  text-align: center;
+  border: 2px solid grey;
+  border-bottom: 5px solid grey;
+  border-radius: 5px;
+  box-shadow: 7px 7px 4px #777;
+  top: 0;
+  transition: all 0.075s;
+}
+footer#files div.container>*:not(h3):hover {
+  box-shadow: 0px 0px 4px #777;
+  top: 5px;
+}
+footer#files div.container>:last-child {
+  grid-column: span 2;
+}
+footer#files h3 {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   nav {
     overflow-x: scroll;
@@ -202,7 +308,7 @@ nav a {
   }
   nav a {
     padding: 0 2vw;
-    border: 2px solid black;
+    border: 2px dashed black;
     min-width: 100px;
   }
   nav li:nth-child(n + 5) {
