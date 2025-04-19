@@ -152,7 +152,7 @@ header a.link-github:hover {
 nav {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 nav>ul {
@@ -195,6 +195,11 @@ nav a {
   nav {
     overflow-x: scroll;
     white-space: nowrap;
+  }
+  nav a {
+    padding: 0 2vw;
+    border: 2px solid black;
+    min-width: 100px;
   }
   nav li:nth-child(n + 5) {
     position: unset;
