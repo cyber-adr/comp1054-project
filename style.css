@@ -194,6 +194,16 @@ nav>ul {
   border-radius: 10px;
 }
 
+#about>section:nth-child(2)>ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #202020;
+  border-radius: 10px;
+}
+
 #about>section:nth-child(2)>ul>li {
   padding: 1rem 1vw;
 }
