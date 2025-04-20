@@ -109,17 +109,18 @@ header>div.container {
 }
 
 h1 {
+  position: relative;
   margin: 7.5rem 0 5rem;
   padding: 2rem 5vw;
   background-color: var(--color-primary);
   border-bottom: 10px solid var(--color-secondary);
   border-radius: var(--border-radius);
-  box-shadow: 0px 10px 5px #666;
-  transition: border-bottom 0.125s, box-shadow 0.5s, position 0.5s;
+  box-shadow: 0px 7px 5px #666;
+  transition: border-bottom 0.125s, box-shadow 0.125s, transform 0.125s;
 }
 h1:active {
   border-bottom: 1px solid var(--color-secondary);
-  box-shadow: 0px 2px 5px #666;
+  box-shadow: 0px 2px 3px #666;
 }
 
 h2 {
@@ -139,12 +140,18 @@ h2:hover {
 
 header h2, header p {
   padding: 1rem 2rem;
+  text-align: center;
 }
 
 a.link-github {
   text-align: center;
-  padding: 1em;
-  background-color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a.link-github>span {
+  display: inline-block;
+  align-self: center;
+  padding: 0 0.5vw;
 }
 
 a.link-github svg {
@@ -154,6 +161,8 @@ a.link-github svg {
 
 header a.link-github {
   display: inline-flex;
+  padding: 1rem 2vw;
+  background-color: var(--color-secondary);
   box-shadow: 10px 10px 5px #646464;
   transform: translateY(0);
   transition: box-shadow 0.5s, transform 0.5s;
@@ -170,12 +179,23 @@ nav {
   width: 100%;
 }
 
-nav>ul, #about>section:nth-child(2)>ul {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+nav>ul {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
+#about>section:nth-child(2)>ul>li {
+  padding: 1rem 1vw;
 }
 
 nav li {
@@ -183,6 +203,10 @@ nav li {
   background-color: #ffd900cc;
   border: 3px solid rgb(100, 100, 100);
   border-radius: 5px;
+  transition: background-color 0.25s;
+}
+nav li:hover {
+  background-color: #ffed88e1;
 }
 
 nav li:nth-child(n + 5) {
@@ -218,15 +242,27 @@ section {
   background-color: #3D3D3D;
   border-radius: var(--border-radius);
   border: 2px solid #646464;
-  color: #30cfa9;
 }
 
-section p {
+section p, section li {
   padding: 1rem 0;
+  color: #30cfa9;
+  text-shadow: none;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+section p:hover, section li:hover {
+  color: #3cf5ca;
+  text-shadow: 0px 0px 2px #30cfa9;
 }
 
 section a {
   color: #a7a9f5;
+  text-shadow: none;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+section a:hover {
+  color: #bfc0f2;
+  text-shadow: 0px 0px 2px #30cfa9;
 }
 
 blockquote {
@@ -243,31 +279,24 @@ section h3 {
 	background-clip: text;
 }
 
-#about>section:nth-child(2)>ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  overflow-x: scroll;
-  white-space: nowrap;
-  background-color: #202020;
-  border-radius: 10px;
-}
-
-#about>section:nth-child(2)>ul>li {
-  padding: 1rem 1vw;
-}
-
 footer#files div.container {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+footer#files div.container a {
+  text-decoration: none;
+}
+
+
 footer#files div.container>h3 {
   align-content: center;
   position: relative;
   grid-column: span 2;
   padding: 1rem;
 }
+
 footer#files div.container>h3::after {
   position: absolute;
   content: "";
@@ -280,7 +309,7 @@ footer#files div.container>h3::after {
 footer#files div.container>*:not(h3) {
   position: relative;
   background-color: #e8e8e8;
-  margin: 1rem 1vw;
+  margin: 1rem 3vw;
   padding: 2rem 5vw;
   text-align: center;
   border: 2px solid grey;
@@ -294,11 +323,127 @@ footer#files div.container>*:not(h3):hover {
   box-shadow: 0px 0px 4px #777;
   top: 5px;
 }
+
 footer#files div.container>:last-child {
   grid-column: span 2;
 }
+
 footer#files h3 {
   text-align: center;
+}
+
+aside.profile>div.container {
+  text-align: center;
+}
+
+aside#styles>div.container {
+  text-align: center;
+}
+
+h4#profile-title {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+footer.page-footer>div.container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2vw 5rem;
+}
+
+footer.page-footer>div.container p:first-child {
+  padding: 2rem 2vw;
+  text-align: center;
+}
+
+footer.page-footer>div.container ul {
+  display: grid;
+  align-items: center;
+  gap: 2vw;
+  grid-template-areas: 
+  "twitter github RSS subscribe";
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2rem 2vw;
+  border-radius: 10px;
+  background-color: #00000072;
+}
+
+footer.page-footer>div.container ul li {
+  /* Use Flexbox in order to fill li by using width padding 100% inside anchors */
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+footer.page-footer>div.container ul a {
+  /* Make anchor behave like block elements to allow padding */
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 5vw 0;
+}
+
+footer.page-footer>div.container ul li:first-child {
+  grid-area: twitter;
+}
+
+footer.page-footer>div.container ul li:nth-child(2) {
+  grid-area: github;
+}
+
+footer.page-footer>div.container ul li:nth-child(3) {
+  grid-area: RSS;
+}
+
+footer.page-footer>div.container ul li:nth-child(4) {
+  grid-area: subscribe;
+}
+footer.page-footer>div.container p:nth-of-type(n+2) {
+  margin: 1rem 0;
+}
+
+footer.page-footer>div.container ul li {
+  position: relative;
+  text-align: center;
+  top: 0;
+  box-shadow: 7px 7px 10px #ffffff;
+  white-space: nowrap;
+  transition: position 0.5s, top 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+footer.page-footer>div.container ul li:hover {
+  position: relative;
+  top: 7px;
+}
+
+footer.page-footer>div.container ul li:nth-child(1) {
+  background-color: #58b7ff;
+}
+footer.page-footer>div.container ul li:nth-child(1):hover {
+  background-color: #a3d7ff;
+  box-shadow: 0px 0px 7px 3px #58b7ff;
+}
+ footer.page-footer>div.container ul li:nth-child(2) {
+   background-color: var(--color-secondary);
+ }
+ footer.page-footer>div.container ul li:nth-child(2):hover {
+  background-color: #ffc2d8;
+  box-shadow: 0px 0px 7px 3px var(--color-secondary);
+}
+ footer.page-footer>div.container ul li:nth-child(3) {
+   background-color: #13d913;
+ }
+ footer.page-footer>div.container ul li:nth-child(3):hover {
+  background-color: #63ed63;
+  box-shadow: 0px 0px 7px 3px #13d913;
+}
+ footer.page-footer>div.container ul li:nth-child(4) {
+   background-color: #d87eff;
+ }
+ footer.page-footer>div.container ul li:nth-child(4):hover {
+  background-color: #e7aeff;
+  box-shadow: 0px 0px 7px 3px #d87eff;
 }
 
 @media (max-width: 768px) {
@@ -313,5 +458,12 @@ footer#files h3 {
   }
   nav li:nth-child(n + 5) {
     position: unset;
+  }
+  footer.page-footer>div.container ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "twitter github"
+    "RSS subscribe";
   }
 }
