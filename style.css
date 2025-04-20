@@ -96,6 +96,7 @@ a.skip-link {
   border-top: none;
   transition: top 0.25s, height 0.25s;
 }
+
 a.skip-link:focus {
   top: 0;
   height: 100px;
@@ -118,6 +119,7 @@ h1 {
   box-shadow: 0px 7px 5px #666;
   transition: border-bottom 0.125s, box-shadow 0.125s, transform 0.125s;
 }
+
 h1:active {
   border-bottom: 1px solid var(--color-secondary);
   box-shadow: 0px 2px 3px #666;
@@ -132,17 +134,21 @@ h2 {
   top: 0;
   transition: top 0.5s, text-shadow 0.5s;
 }
-header h2, aside#styles h2 {
+
+header h2,
+aside#styles h2 {
   color: #ba30ff;
 
 }
+
 h2:hover {
   position: relative;
   top: -3px;
   text-shadow: 0px 6px 2px #777777;
 }
 
-header h2, header p {
+header h2,
+header p {
   padding: 1rem 2rem;
   text-align: center;
 }
@@ -171,6 +177,7 @@ header a.link-github {
   transform: translateY(0);
   transition: box-shadow 0.5s, transform 0.5s;
 }
+
 header a.link-github:hover {
   box-shadow: 2.5px 2.5px 2.5px #646464;
   transform: translateY(10px);
@@ -219,6 +226,7 @@ nav li {
   border-radius: 5px;
   transition: background-color 0.25s;
 }
+
 nav li:hover {
   background-color: #ffed88e1;
 }
@@ -228,11 +236,13 @@ nav li:nth-child(n + 5) {
   /* Bottom navbar */
   top: calc(100vh - 40px);
 }
+
 nav li:nth-child(6) {
   width: 50vw;
   left: 50vw;
 
 }
+
 nav li:nth-child(5) {
   width: 50vw;
   left: 0;
@@ -258,13 +268,16 @@ section {
   border: 2px solid #646464;
 }
 
-section p, section li {
+section p,
+section li {
   padding: 1rem 0;
   color: #30cfa9;
   text-shadow: none;
   transition: color 0.5s, text-shadow 0.5s;
 }
-section p:hover, section li:hover {
+
+section p:hover,
+section li:hover {
   color: #3cf5ca;
   text-shadow: 0px 0px 2px #30cfa9;
 }
@@ -274,6 +287,7 @@ section a {
   text-shadow: none;
   transition: color 0.5s, text-shadow 0.5s;
 }
+
 section a:hover {
   color: #bfc0f2;
   text-shadow: 0px 0px 2px #30cfa9;
@@ -290,7 +304,7 @@ section h3 {
   background: linear-gradient(to right, #df60ff 0%, #ff7866 25%);
   color: transparent;
   -webkit-background-clip: text;
-	background-clip: text;
+  background-clip: text;
 }
 
 footer#files div.container {
@@ -299,6 +313,7 @@ footer#files div.container {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+
 footer#files div.container a {
   text-decoration: none;
 }
@@ -320,6 +335,7 @@ footer#files div.container>h3::after {
   height: 0.5rem;
   background-color: #ffd900cc;
 }
+
 footer#files div.container>*:not(h3) {
   position: relative;
   background-color: #e8e8e8;
@@ -333,6 +349,7 @@ footer#files div.container>*:not(h3) {
   top: 0;
   transition: all 0.075s;
 }
+
 footer#files div.container>*:not(h3):hover {
   box-shadow: 0px 0px 4px #777;
   top: 5px;
@@ -349,6 +366,7 @@ footer#files h3 {
 aside.profile {
   text-align: center;
 }
+
 aside.profile h4 {
   color: #ce6a00;
 }
@@ -377,8 +395,8 @@ footer.page-footer>div.container ul {
   display: grid;
   align-items: center;
   gap: 2vw;
-  grid-template-areas: 
-  "twitter github RSS subscribe";
+  grid-template-areas:
+    "twitter github RSS subscribe";
   grid-template-columns: repeat(4, 1fr);
   padding: 2rem 2vw;
   border-radius: 10px;
@@ -417,6 +435,7 @@ footer.page-footer>div.container ul li:nth-child(3) {
 footer.page-footer>div.container ul li:nth-child(4) {
   grid-area: subscribe;
 }
+
 footer.page-footer>div.container p:nth-of-type(n+2) {
   margin: 1rem 0;
   text-align: center;
@@ -430,6 +449,7 @@ footer.page-footer>div.container ul li {
   white-space: nowrap;
   transition: position 0.5s, top 0.5s, box-shadow 0.5s, background-color 0.5s;
 }
+
 footer.page-footer>div.container ul li:hover {
   position: relative;
   top: 7px;
@@ -438,28 +458,35 @@ footer.page-footer>div.container ul li:hover {
 footer.page-footer>div.container ul li:nth-child(1) {
   background-color: #58b7ff;
 }
+
 footer.page-footer>div.container ul li:nth-child(1):hover {
   background-color: #a3d7ff;
   box-shadow: 0px 0px 7px 3px #58b7ff;
 }
- footer.page-footer>div.container ul li:nth-child(2) {
-   background-color: var(--color-secondary);
- }
- footer.page-footer>div.container ul li:nth-child(2):hover {
+
+footer.page-footer>div.container ul li:nth-child(2) {
+  background-color: var(--color-secondary);
+}
+
+footer.page-footer>div.container ul li:nth-child(2):hover {
   background-color: #ffc2d8;
   box-shadow: 0px 0px 7px 3px var(--color-secondary);
 }
- footer.page-footer>div.container ul li:nth-child(3) {
-   background-color: #13d913;
- }
- footer.page-footer>div.container ul li:nth-child(3):hover {
+
+footer.page-footer>div.container ul li:nth-child(3) {
+  background-color: #13d913;
+}
+
+footer.page-footer>div.container ul li:nth-child(3):hover {
   background-color: #63ed63;
   box-shadow: 0px 0px 7px 3px #13d913;
 }
- footer.page-footer>div.container ul li:nth-child(4) {
-   background-color: #fb85ff;
- }
- footer.page-footer>div.container ul li:nth-child(4):hover {
+
+footer.page-footer>div.container ul li:nth-child(4) {
+  background-color: #fb85ff;
+}
+
+footer.page-footer>div.container ul li:nth-child(4):hover {
   background-color: #e7aeff;
   box-shadow: 0px 0px 7px 3px #d87eff;
 }
@@ -469,22 +496,26 @@ footer.page-footer>div.container ul li:nth-child(1):hover {
     overflow-x: scroll;
     white-space: nowrap;
   }
+
   nav a {
     padding: 0 2vw;
     border: 2px dashed black;
     min-width: 100px;
   }
+
   nav li:nth-child(n + 5) {
     position: unset;
   }
+
   footer.page-footer>div.container {
     margin-bottom: 2rem;
   }
+
   footer.page-footer>div.container ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 
-    "twitter github"
-    "RSS subscribe";
+    grid-template-areas:
+      "twitter github"
+      "RSS subscribe";
   }
 }
