@@ -3,7 +3,7 @@
 
 :root {
   --color-primary: #FFD414;
-  --color-secondary: #f18db0;
+  --color-secondary: #ff9b9b;
   --color-background: #94fffd;
   --color-text: #14483c;
   --color-anchor: #30482D;
@@ -132,10 +132,14 @@ h2 {
   top: 0;
   transition: top 0.5s, text-shadow 0.5s;
 }
+header h2, aside#styles h2 {
+  color: #ba30ff;
+
+}
 h2:hover {
   position: relative;
   top: -3px;
-  text-shadow: 0px 6px 2px #777777;;
+  text-shadow: 0px 6px 2px #777777;
 }
 
 header h2, header p {
@@ -342,8 +346,11 @@ footer#files h3 {
   text-align: center;
 }
 
-aside.profile>div.container {
+aside.profile {
   text-align: center;
+}
+aside.profile h4 {
+  color: #ce6a00;
 }
 
 aside#styles>div.container {
@@ -412,6 +419,7 @@ footer.page-footer>div.container ul li:nth-child(4) {
 }
 footer.page-footer>div.container p:nth-of-type(n+2) {
   margin: 1rem 0;
+  text-align: center;
 }
 
 footer.page-footer>div.container ul li {
@@ -449,7 +457,7 @@ footer.page-footer>div.container ul li:nth-child(1):hover {
   box-shadow: 0px 0px 7px 3px #13d913;
 }
  footer.page-footer>div.container ul li:nth-child(4) {
-   background-color: #d87eff;
+   background-color: #fb85ff;
  }
  footer.page-footer>div.container ul li:nth-child(4):hover {
   background-color: #e7aeff;
@@ -468,6 +476,9 @@ footer.page-footer>div.container ul li:nth-child(1):hover {
   }
   nav li:nth-child(n + 5) {
     position: unset;
+  }
+  footer.page-footer>div.container {
+    margin-bottom: 2rem;
   }
   footer.page-footer>div.container ul {
     grid-template-columns: repeat(2, 1fr);
