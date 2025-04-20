@@ -64,6 +64,24 @@ body {
 
 /* Personal Styling */
 
+body#entrance {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+body#entrance h1 {
+  text-align: center;
+  margin: auto auto;
+}
+
+body#entrance a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);
@@ -419,10 +437,20 @@ footer.page-footer>div.container ul {
 }
 
 footer.page-footer>div.container ul li {
+  position: relative;
+  text-align: center;
   /* Use Flexbox in order to fill li by using width padding 100% inside anchors */
   display: flex;
   justify-content: center;
   border-radius: 5px;
+  top: 0;
+  box-shadow: 7px 7px 10px #ffffff;
+  transition: position 0.5s, top 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+footer.page-footer>div.container ul li:hover {
+  position: relative;
+  top: 7px;
 }
 
 footer.page-footer>div.container ul a {
@@ -435,41 +463,13 @@ footer.page-footer>div.container ul a {
   padding: 5vw 0;
 }
 
-footer.page-footer>div.container ul li:first-child {
-  grid-area: twitter;
-}
-
-footer.page-footer>div.container ul li:nth-child(2) {
-  grid-area: github;
-}
-
-footer.page-footer>div.container ul li:nth-child(3) {
-  grid-area: RSS;
-}
-
-footer.page-footer>div.container ul li:nth-child(4) {
-  grid-area: subscribe;
-}
-
 footer.page-footer>div.container p:nth-of-type(n+2) {
   margin: 1rem 0;
   text-align: center;
 }
 
-footer.page-footer>div.container ul li {
-  position: relative;
-  text-align: center;
-  top: 0;
-  box-shadow: 7px 7px 10px #ffffff;
-  transition: position 0.5s, top 0.5s, box-shadow 0.5s, background-color 0.5s;
-}
-
-footer.page-footer>div.container ul li:hover {
-  position: relative;
-  top: 7px;
-}
-
 footer.page-footer>div.container ul li:nth-child(1) {
+  grid-area: twitter;
   background-color: #58b7ff;
 }
 
@@ -479,6 +479,7 @@ footer.page-footer>div.container ul li:nth-child(1):hover {
 }
 
 footer.page-footer>div.container ul li:nth-child(2) {
+  grid-area: github;
   background-color: var(--color-secondary);
 }
 
@@ -488,6 +489,7 @@ footer.page-footer>div.container ul li:nth-child(2):hover {
 }
 
 footer.page-footer>div.container ul li:nth-child(3) {
+  grid-area: RSS;
   background-color: #13d913;
 }
 
@@ -497,6 +499,7 @@ footer.page-footer>div.container ul li:nth-child(3):hover {
 }
 
 footer.page-footer>div.container ul li:nth-child(4) {
+  grid-area: subscribe;
   background-color: #fb85ff;
 }
 
