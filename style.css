@@ -521,6 +521,10 @@ footer.page-footer>div.container ul li:nth-child(4):hover {
     position: unset;
   }
 
+  section p {
+    hyphens: auto;
+  }
+
   footer.page-footer>div.container {
     margin-bottom: 2rem;
   }
