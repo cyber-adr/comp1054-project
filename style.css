@@ -446,7 +446,6 @@ footer.page-footer>div.container ul li {
   text-align: center;
   top: 0;
   box-shadow: 7px 7px 10px #ffffff;
-  white-space: nowrap;
   transition: position 0.5s, top 0.5s, box-shadow 0.5s, background-color 0.5s;
 }
 
