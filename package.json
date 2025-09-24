@@ -15,8 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build:css": "postcss pre-processed-style.css -o style.css",
-    "watch:css": "postcss pre-processed-style.css -o style.css -w",
+    "build:css": "postcss styles/css/buttons.css -o style.css",
+    "watch:css": "postcss styles/css/buttons.css -o style.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
