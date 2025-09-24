@@ -1,0 +1,542 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-primary: #FFD414;
+  --color-secondary: #ff9b9b;
+  --color-background: #94fffd;
+  --color-text: #14483c;
+  --color-anchor: #30482D;
+  --font-family: "Maven Pro", "Roboto", sans-serif;
+  --border-radius: 15px;
+}
+
+html {
+  /* Accomodate space for navbar after anchor link traversal */
+  scroll-padding-top: 40px;
+  scroll-behavior: smooth;
+}
+
+/*
+ * [Modified] Modern CSS Reset
+ * https://github.com/hankchizljaw/modern-css-reset
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  /* hyphens: auto; */
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Personal Styling */
+
+body#entrance {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+body#entrance h1 {
+  text-align: center;
+  margin: auto auto;
+}
+
+body#entrance a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-family: var(--font-family);
+}
+
+/* Using clamp() to set responsive font-sizes for heading elements */
+h1 {
+  font-size: clamp(2rem, 7vw, 6rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1.75vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 1.5vw, 1.75rem);
+}
+
+a {
+  color: var(--color-anchor);
+  font-weight: bold;
+}
+
+a.skip-link {
+  position: fixed;
+  /* Define left and right positions first before using margin */
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  height: 40px;
+  padding: 0 1vw;
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-secondary);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-top: none;
+  transition: top 0.25s, height 0.25s;
+}
+
+a.skip-link:focus {
+  top: 0;
+  height: 100px;
+}
+
+header>div.container {
+  display: grid;
+  justify-items: center;
+  min-height: auto;
+  padding: 0 0 6rem;
+}
+
+h1 {
+  position: relative;
+  margin: 7.5rem 0 5rem;
+  padding: 2rem 5vw;
+  background-color: var(--color-primary);
+  border-bottom: 10px solid var(--color-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 7px 5px #666;
+  transition: border-bottom 0.125s, box-shadow 0.125s, transform 0.125s;
+}
+
+h1:active {
+  border-bottom: 1px solid var(--color-secondary);
+  box-shadow: 0px 2px 3px #666;
+}
+
+h2 {
+  color: var(--color-primary);
+  position: relative;
+  text-align: center;
+  margin: 1rem auto;
+  text-shadow: 0px 3px 2px #888888;
+  top: 0;
+  transition: top 0.5s, text-shadow 0.5s;
+}
+
+header h2,
+aside#styles h2 {
+  color: #ba30ff;
+
+}
+
+h2:hover {
+  position: relative;
+  top: -3px;
+  text-shadow: 0px 6px 2px #777777;
+}
+
+header h2,
+header p {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+a.link-github {
+  text-align: center;
+  text-decoration: none;
+}
+
+a.link-github>span {
+  display: inline-block;
+  align-self: center;
+  padding: 0 0.5vw;
+}
+
+a.link-github svg {
+  width: 1em;
+  fill: rgb(255, 239, 148);
+}
+
+header a.link-github {
+  display: inline-flex;
+  padding: 1rem 2vw;
+  background-color: var(--color-secondary);
+  box-shadow: 10px 10px 5px #646464;
+  transform: translateY(0);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+
+header a.link-github:hover {
+  box-shadow: 2.5px 2.5px 2.5px #646464;
+  transform: translateY(10px);
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav>ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
+#about>section:nth-child(2)>ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #202020;
+  border-radius: 10px;
+}
+
+#about>section:nth-child(2)>ul>li {
+  padding: 1rem 2vw;
+}
+
+nav li {
+  width: 100%;
+  background-color: #ffd900cc;
+  border: 3px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  transition: background-color 0.25s;
+}
+
+nav li:hover {
+  background-color: #ffed88e1;
+}
+
+nav li:nth-child(n + 5) {
+  position: absolute;
+  /* Bottom navbar */
+  top: calc(100vh - 40px);
+}
+
+nav li:nth-child(6) {
+  width: 50vw;
+  left: 50vw;
+
+}
+
+nav li:nth-child(5) {
+  width: 50vw;
+  left: 0;
+}
+
+nav a {
+  /* Allow sizing of anchor */
+  display: inline-block;
+  align-content: center;
+  text-align: center;
+  min-height: 40px;
+  min-width: 40px;
+  width: 100%;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+section {
+  margin: 1vw 5vw;
+  padding: 5vw;
+  background-color: #3D3D3D;
+  border-radius: var(--border-radius);
+  border: 2px solid #646464;
+}
+
+section p,
+section li {
+  padding: 1rem 0;
+  color: #30cfa9;
+  text-shadow: none;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+
+section p:hover,
+section li:hover {
+  color: #3cf5ca;
+  text-shadow: 0px 0px 2px #30cfa9;
+}
+
+section a {
+  color: #a7a9f5;
+  text-shadow: none;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+
+section a:hover {
+  color: #bfc0f2;
+  text-shadow: 0px 0px 2px #30cfa9;
+}
+
+blockquote {
+  border: 2px solid #30cfa9;
+  border-left: none;
+  border-right: none;
+  padding: 1rem 1vw;
+}
+
+section h3 {
+  background: linear-gradient(to right, #df60ff 0%, #ff7866 25%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+footer#files div.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+footer#files div.container a {
+  text-decoration: none;
+}
+
+
+footer#files div.container>h3 {
+  align-content: center;
+  position: relative;
+  grid-column: span 2;
+  padding: 1rem;
+}
+
+footer#files div.container>h3::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 0.5rem;
+  background-color: #ffd900cc;
+}
+
+footer#files div.container>*:not(h3) {
+  position: relative;
+  background-color: #e8e8e8;
+  margin: 1rem 3vw;
+  padding: 2rem 5vw;
+  text-align: center;
+  border: 2px solid grey;
+  border-bottom: 5px solid grey;
+  border-radius: 5px;
+  box-shadow: 7px 7px 4px #777;
+  top: 0;
+  transition: all 0.075s;
+}
+
+footer#files div.container>*:not(h3):hover {
+  box-shadow: 0px 0px 4px #777;
+  top: 5px;
+}
+
+footer#files div.container>:last-child {
+  grid-column: span 2;
+}
+
+footer#files h3 {
+  text-align: center;
+}
+
+aside.profile {
+  text-align: center;
+}
+
+aside.profile h4 {
+  color: #ce6a00;
+}
+
+aside#styles>div.container {
+  text-align: center;
+}
+
+h4#profile-title {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+footer.page-footer>div.container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2vw 5rem;
+}
+
+footer.page-footer>div.container p:first-child {
+  padding: 2rem 2vw;
+  text-align: center;
+}
+
+footer.page-footer>div.container ul {
+  display: grid;
+  align-items: center;
+  gap: 2vw;
+  grid-template-areas:
+    "twitter github RSS subscribe";
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2rem 2vw;
+  border-radius: 10px;
+  background-color: #00000072;
+}
+
+footer.page-footer>div.container ul li {
+  position: relative;
+  text-align: center;
+  /* Use Flexbox in order to fill li by using width padding 100% inside anchors */
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  top: 0;
+  box-shadow: 7px 7px 10px #ffffff;
+  transition: position 0.5s, top 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+footer.page-footer>div.container ul li:hover {
+  position: relative;
+  top: 7px;
+}
+
+footer.page-footer>div.container ul a {
+  /* Make anchor behave like block elements to allow padding */
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 5vw 0;
+}
+
+footer.page-footer>div.container p:nth-of-type(n+2) {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+footer.page-footer>div.container ul li:nth-child(1) {
+  grid-area: twitter;
+  background-color: #58b7ff;
+}
+
+footer.page-footer>div.container ul li:nth-child(1):hover {
+  background-color: #a3d7ff;
+  box-shadow: 0px 0px 7px 3px #58b7ff;
+}
+
+footer.page-footer>div.container ul li:nth-child(2) {
+  grid-area: github;
+  background-color: var(--color-secondary);
+}
+
+footer.page-footer>div.container ul li:nth-child(2):hover {
+  background-color: #ffc2d8;
+  box-shadow: 0px 0px 7px 3px var(--color-secondary);
+}
+
+footer.page-footer>div.container ul li:nth-child(3) {
+  grid-area: RSS;
+  background-color: #13d913;
+}
+
+footer.page-footer>div.container ul li:nth-child(3):hover {
+  background-color: #63ed63;
+  box-shadow: 0px 0px 7px 3px #13d913;
+}
+
+footer.page-footer>div.container ul li:nth-child(4) {
+  grid-area: subscribe;
+  background-color: #fb85ff;
+}
+
+footer.page-footer>div.container ul li:nth-child(4):hover {
+  background-color: #e7aeff;
+  box-shadow: 0px 0px 7px 3px #d87eff;
+}
+
+@media (max-width: 768px) {
+  nav {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  nav a {
+    padding: 0 2vw;
+    border: 2px dashed black;
+    min-width: 100px;
+  }
+
+  nav li:nth-child(n + 5) {
+    position: unset;
+  }
+
+  section p {
+    hyphens: auto;
+  }
+
+  footer.page-footer>div.container {
+    margin-bottom: 2rem;
+  }
+
+  footer.page-footer>div.container ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "twitter github"
+      "RSS subscribe";
+  }
+}
