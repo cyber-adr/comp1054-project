@@ -1,3 +1,3 @@
 <h1>Style Stage Project</h1>
-<p><a href="https://cyber-adr.github.io/comp1054-project/">Visit Page</a></p>
+<p><a href="https://cyber-adr.github.io/stylestage-buttons/">Visit Page</a></p>
 <p>The purpose of this project is to develop a web page with the main focus being the design of the page. The HTML structure is modified only to the minimum extent required for attribution values while CSS and CSS selectors are used to format and design the webpage to enhance the user interface and experience. The webpage follows the WCAG level AAA web accessibility standards for color contrast. It features a toggable skip link that is visible from the top of the viewport on pressing the tab key to skip to the main content of the page. The CSS stylesheet is written entirely by hand without the use of frameworks.</p>
